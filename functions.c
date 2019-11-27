@@ -7,5 +7,5 @@ typedef struct Polynomials
 {
   int power;
   double constant;
-  struct Node *next;
+  struct Polynomials *next;
 } Poly;
