@@ -191,8 +191,15 @@ int retHigh(Poly **A)
     {
       if(current->power > max)
 	{
-	  max =  current->power;
-	  current = current->next;
+	  if(current->constant != 0) // Checks if coefficient is not zero
+	    {
+	      max =  current->power;
+	      current = current->next;
+	    }
+	  else
+	    {
+	      current = current->next;
+	    }
 	}
       else
 	{
