@@ -1,6 +1,10 @@
 #ifndef ASSIGNMENT_3_H_INCLUDED
 #define ASSIGNMENT_3_H_INCLUDED
 
+#include <stdlib.h>
+#include <stdio.h>
+
+
 // Creates a function to add 2 poloynomials.
 void addPoly(Poly *A, Poly *B);
 // Creates a function that multiplies 2 poloynomials.
