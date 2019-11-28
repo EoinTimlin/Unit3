@@ -132,7 +132,7 @@ while(A->next && B->next) // While there term in A and in B
     else // Otherwise, if they are the same degree
     {
       C->power = A->power; 
-      C->constant = A->constant - B->constant; // Term in C i=Subtract the constants of each term
+      C->constant = A->constant - B->constant; // Constant is the difference between constant A and constant B 
       A = A->next;
       B = B->next;
     }
@@ -140,18 +140,18 @@ while(A->next && B->next) // While there term in A and in B
      C = C->next;
      C->next = NULL;
   }
-  while(A->next || B->next)
+  while(A->next || B->next) // While there is a term in A or B
   {
-    if(A->next)
+    if(A->next) // If there is a term in A
     {
       C->power = A->power;
-      C->constant = A->constant;
+      C->constant = A->constant; // Set this term to A
       A = A->next;
     }
-    if(B->next)
+    if(B->next) // If there is a term in B
     {
       C->power = B->power;
-      C->constant = B->constant;
+      C->constant = B->constant; // Set term to B
       B = B->next;
     }
     C->next = (Poly*)malloc(sizeof(C));
@@ -163,7 +163,7 @@ while(A->next && B->next) // While there term in A and in B
 //multiplies a double by the polynomial
 void multiplyPoly(Poly *A, double c){
   while(A->next != NULL){
-   A->constant = (A->constant)/c;
+   A->constant = (A->constant)/c; // Multiply by constant c
     A = A->next;
   }
 }
@@ -171,7 +171,7 @@ void multiplyPoly(Poly *A, double c){
 //divides a double by the polynomial
 void dividePoly(Poly *A, double c){
   while(A->next != NULL){
-    A->constant = (A->constant)/c;
+    A->constant = (A->constant)/c; // Divide by constant c
     A = A->next;
   }
 }
@@ -182,7 +182,7 @@ void normalPoly(Poly *A){
   double c;
   c = A->constant;
   while(A->power != 0){
-    A->constant = (A->constant)/c;
+    A->constant = (A->constant)/c; // Divide by highest term's constant
     A = A->next;
   }
 }
