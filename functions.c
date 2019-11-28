@@ -153,15 +153,15 @@ while(A->next && B->next)
 
 //multiplies a double by the polynomial
 void multiplyPoly(Poly *A, double c){
-  for (int i = A->power;i>-1;i--){
-    A->constant = (A->constant)*c;
+  while(A->next != NULL){
+   A->constant = (A->constant)/c;
     A = A->next;
   }
 }
 
-//divides a polynomial by a double
+//divides a double by the polynomial
 void dividePoly(Poly *A, double c){
-  for (int i = A->power;i>-1;i--){
+  while(A->next != NULL){
     A->constant = (A->constant)/c;
     A = A->next;
   }
