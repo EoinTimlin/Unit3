@@ -4,6 +4,12 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+typedef struct Polynomials
+{
+  int power;
+  double constant;
+  struct Polynomials *next;
+} Poly;
 
 // Creates a function to add 2 poloynomials.
 void addPoly(Poly *A, Poly *B);
