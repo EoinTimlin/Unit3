@@ -1,7 +1,7 @@
 // Functions to work with Polynomials
 
-#include <stdlib.h>
-#include <stdio.h>
+
+#include "assignment_3.h"
 
 typedef struct Polynomials
 {
