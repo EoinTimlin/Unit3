@@ -112,7 +112,7 @@ void addPoly(Poly *A, Poly *B, Poly *C)
   }
 }
 // Function to subtract polynomials
-subtractPoly(Poly *A, Poly *B, Poly *C) 
+void subtractPoly(Poly *A, Poly *B, Poly *C) 
 {
 while(A->next && B->next) // While there term in A and in B
   {
