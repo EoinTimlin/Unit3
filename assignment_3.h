@@ -10,7 +10,7 @@ void subtractPoly(Poly *A, Poly *B);
 // Function that normalises a polynomial
 void normalPoly(Poly *A);
 // Creates a function that deletes a poloynomial.
-void deletePoly(Poly *A);
+void deletePoly(Poly **A);
 // Creates a function that creates a polynomial.
 void createPoly(Poly **A,double con,int pow);
 // Creates a function that prints a polynomial.
