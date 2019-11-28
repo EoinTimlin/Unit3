@@ -119,20 +119,20 @@ while(A->next && B->next) // While there term in A and in B
     if(A->power > B->power) // If this term in A is higher degree than in B
     {
       C->power = A->power;
-      C->constant = A->constant;
+      C->constant = A->constant; // Set this term in C to A
       A = A->next;
     }
 
     else if(A->power < B->power) // Else if this term in B is higher degree than the term in A
     {
       C->power = B->power;
-      C->constant = B->constant;
+      C->constant = B->constant; // Set this term in C to B
       B = B->next;
     }
-    else
+    else // Otherwise, if they are the same degree
     {
-      C->power = A->power;
-      C->constant = A->constant - B->constant;
+      C->power = A->power; 
+      C->constant = A->constant - B->constant; // Term in C i=Subtract the constants of each term
       A = A->next;
       B = B->next;
     }
