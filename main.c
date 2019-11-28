@@ -21,30 +21,30 @@ int main()
   Poly *poly4 = NULL;
   poly4 = (Poly*)malloc(sizeof(poly4));
 
-  printPoly(poly1);
   printf("Expected: 5x^2 + 4x^1 + 2x^0\n");
   printf("Actual: ");
+  printPoly(poly1);
   printf("\n");
 
-  printPoly(poly2);
   printf("Expected: 6x^3 + 3x^2 + 8x^0\n");
   printf("Actual: ");
+  printPoly(poly2);
   printf("\n");
 
   // Add Polynomials
   addPoly(poly1, poly2, poly3);
 
-  printPoly(poly3);
   printf("Expected: 6x^3 + 8x^2 + 4x^1 + 10x^0\n");
   printf("Actual: ");
+  printPoly(poly3);
   printf("\n");
 
   // Subtract Polynomials  
   subtractPoly(poly1, poly2, poly4);
 
-  printPoly(poly4);
   printf("Expected: 6x^3 + 2x^2 + 4x^1 + -6x^0");
   printf("Actual: ");
+  printPoly(poly4);
   printf("\n");
 
   // Testing delete function

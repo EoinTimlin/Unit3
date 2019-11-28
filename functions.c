@@ -163,7 +163,7 @@ while(A->next && B->next) // While there term in A and in B
 //multiplies a double by the polynomial
 void multiplyPoly(Poly *A, double c){
   while(A->next != NULL){
-   A->constant = (A->constant)/c; // Multiply by constant c
+   A->constant = (A->constant)*c;
     A = A->next;
   }
 }
