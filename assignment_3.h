@@ -25,6 +25,8 @@ void normalPoly(Poly *A);
 void deletePoly(Poly **A);
 // Creates a function that creates a polynomial.
 void createPoly(Poly **A,double con,int pow);
+// Creates a function that returns the highest order of polynomial.
+int retHigh(Poly **A);
 // Creates a function that prints a polynomial.
 void printPoly(Poly *A);
 
