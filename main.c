@@ -46,9 +46,9 @@ int main()
   printf("\n");
 
   // Testing delete function
-  printf("Deleting Polynomial....\n");
+  printf("Deleting Polynomial 3 ....\n");
   deletePoly(&poly3);
-  if(poly == NULL)
+  if(poly3 == NULL)
     {
       printf("Polynomial fully deleted\n");
     }
@@ -60,8 +60,8 @@ int main()
   // Testing order function
   int highorder;
   highorder = retHigh(&poly2);
-  printf("Order of Polynomial: \n");
-  printf("Expected: 6 Actual: %d \n",highorder);
+  printf("Order of Polynomial 2: \n");
+  printf("Expected: 3 Actual: %d \n",highorder);
 
   //Testing multiply function
   Poly *poly6 = NULL;
