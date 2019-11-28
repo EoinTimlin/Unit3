@@ -56,3 +56,98 @@ void deletePoly(Poly **A)
    *A = NULL; 
 }
 
+void addPoly(Poly *A, Poly *B, Poly *C)
+{
+  while(A->next && B->next)
+  {
+    if(A->power > B->power)
+    {
+      C->power = A->power;
+      C->constant = A->constant;
+      A = A->next;
+    }
+
+    else if(A->power < B->power)
+    {
+      C->power = B->power;
+      C->constant = B->constant;
+      B = B->next;
+    }
+    else
+    {
+      C->power = A->power;
+      C->constant = A->constant + B->constant;
+      A = A->next;
+      B = B->next;
+    }
+     C->next = (Poly*)malloc(sizeof(C));
+     C = C->next;
+     C->next = NULL;
+  }
+  while(A->next || B->next)
+  {
+    if(A->next)
+    {
+      C->power = A->power;
+      C->constant = A->constant;
+      A = A->next;
+    }
+    if(B->next)
+    {
+      C->power = B->power;
+      C->constant = B->constant;
+      B = B->next;
+    }
+    C->next = (Poly*)malloc(sizeof(C));
+    C = C->next;
+    C->next = NULL;
+  }
+}
+
+subtractPoly(Poly *A, Poly *B, Poly *C)
+{
+while(A->next && B->next)
+  {
+    if(A->power > B->power)
+    {
+      C->power = A->power;
+      C->constant = A->constant;
+      A = A->next;
+    }
+
+    else if(A->power < B->power)
+    {
+      C->power = B->power;
+      C->constant = B->constant;
+      B = B->next;
+    }
+    else
+    {
+      C->power = A->power;
+      C->constant = A->constant - B->constant;
+      A = A->next;
+      B = B->next;
+    }
+     C->next = (Poly*)malloc(sizeof(C));
+     C = C->next;
+     C->next = NULL;
+  }
+  while(A->next || B->next)
+  {
+    if(A->next)
+    {
+      C->power = A->power;
+      C->constant = A->constant;
+      A = A->next;
+    }
+    if(B->next)
+    {
+      C->power = B->power;
+      C->constant = B->constant;
+      B = B->next;
+    }
+    C->next = (Poly*)malloc(sizeof(C));
+    C = C->next;
+    C->next = NULL;
+  }
+}
