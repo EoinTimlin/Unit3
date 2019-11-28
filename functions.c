@@ -29,11 +29,20 @@ void createPoly(Poly **A,double con,int pow)
 
 // Function to print polynomial
 void printPoly(Poly *A) 
-{ 
-while(A->next != NULL) 
-    { 
-    printf("%.1lfx^%d", A->constant, A->power); 
-    A = A->next; 
+{
+  
+  while(A->next != NULL) 
+    {
+      if(A->power == 0)
+	{
+	  printf("%.1lf",A->constant);
+	  A = A->next;
+	}
+      else
+	{
+	  printf("%.1lfx^%d", A->constant, A->power); 
+          A = A->next;
+	}
     if(A->next != NULL) 
         printf(" + "); 
     } 
