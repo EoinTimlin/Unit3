@@ -181,3 +181,25 @@ void normalPoly(Poly *A){
   }
   
 }
+
+// Function to return highest order of polynomial
+int retHigh(Poly **A)
+{
+  Poly* current = *A;
+  int max = -32000;
+  
+  while(current->next != NULL)
+    {
+      if(current->power > max)
+	{
+	  max =  current->power;
+	  current = current->next;
+	}
+      else
+	{
+	  current = current->next;
+	}
+    }
+  
+  return max;
+}
