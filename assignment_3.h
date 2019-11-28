@@ -17,8 +17,6 @@ void addPoly(Poly *A, Poly *B);
 void multiplyPoly(Poly *A, Poly *B);
 // Creates a function that subtracts 2 polynomials.
 void subtractPoly(Poly *A, Poly *B);
-// Function that returns highest order of a polynomial
-int retHigh(Poly **A);
 // Function that normalises a polynomial
 void normalPoly(Poly *A);
 // Creates a function that deletes a poloynomial.
