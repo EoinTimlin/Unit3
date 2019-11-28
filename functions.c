@@ -172,7 +172,7 @@ void dividePoly(Poly *A, double c){
 void normalPoly(Poly *A){
   double c;
   c = A->constant;
-  while(A->power != NULL){
+  while(A->power != 0){
     A->constant = (A->constant)/c;
     A = A->next;
   }
