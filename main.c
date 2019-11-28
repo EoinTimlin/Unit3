@@ -37,11 +37,23 @@ int main()
   printPoly(poly4);
   printf("\n");
 
+  // Testing delete function
+  printf("Deleting Polynomial....\n");
   deletePoly(&poly3);
-  if(poly3 == NULL)
+  if(poly == NULL)
     {
-      printf("Fully Deleted\n");
+      printf("Polynomial fully deleted\n");
     }
+  else
+    {
+      printf("Failed\n");
+    }
+  
+  // Testing order function
+  int highorder;
+  highorder = retHigh(&poly2);
+  printf("Order of Polynomial: \n");
+  printf("Expected: 6 Actual: %d \n",highorder);
 
   return 0;
 }
