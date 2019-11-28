@@ -12,11 +12,13 @@ typedef struct Polynomials
 } Poly;
 
 // Creates a function to add 2 polynomials.
-void addPoly(Poly *A, Poly *B);
-// Creates a function that multiplies 2 polynomials.
-void multiplyPoly(Poly *A, Poly *B);
+void addPoly(Poly *A, Poly *B, Poly *C);
 // Creates a function that subtracts 2 polynomials.
-void subtractPoly(Poly *A, Poly *B);
+void subtractPoly(Poly *A, Poly *B, Poly *C);
+// Creates a function that multiplies a polynomial.
+void multiplyPoly(Poly *A, double c);
+// Creates a function that divides a polynomial.
+void dividePoly(Poly *A, double c);
 // Function that normalises a polynomial
 void normalPoly(Poly *A);
 // Creates a function that deletes a polynomial.
