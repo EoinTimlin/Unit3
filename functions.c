@@ -181,7 +181,7 @@ void dividePoly(Poly *A, double c){
 void normalPoly(Poly *A){
   double c;
   c = A->constant;
-  while(A->power != 0){
+  while(A->power != 0){ // While terms power isn't 0
     A->constant = (A->constant)/c; // Divide by highest term's constant
     A = A->next;
   }
