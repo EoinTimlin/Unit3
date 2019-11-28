@@ -151,3 +151,16 @@ while(A->next && B->next)
     C->next = NULL;
   }
 }
+
+// Function to normalise a polynomial
+void normalPoly(Poly *A){
+  
+  double c;
+  c = A->constant;
+  
+  for (int i = A->power;i>-1;i--){
+    A->constant = (A->constant)/c;
+    A = A->next;
+  }
+  
+}
