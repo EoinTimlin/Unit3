@@ -1,3 +1,5 @@
+#include "assignment_3.h"
+
 int main()
 {
   //Creating Polynomials 
