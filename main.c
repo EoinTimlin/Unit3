@@ -63,6 +63,31 @@ int main()
   printf("Order of Polynomial: \n");
   printf("Expected: 6 Actual: %d \n",highorder);
 
+  //Testing multiply function
+  Poly *poly6 = NULL;
+  createPoly(&poly6,1,6);
+  createPoly(&poly6,5,5);
+  createPoly(&poly6,3.5,3);
+  createPoly(&poly6,4,1);
+  createPoly(&poly6,2,0);
+
+  multiplyPoly(poly6,2);
+
+  printPoly(poly6);
+  printf("\n");
+  
+  //Testing Divide function
+  Poly *poly7 = NULL;
+  createPoly(&poly7,1,6);
+  createPoly(&poly7,5,5);
+  createPoly(&poly7,3.5,3);
+  createPoly(&poly7,4,1);
+  createPoly(&poly7,2,0);
+
+  dividePoly(poly7,2);
+
+  printPoly(poly7);
+  printf("\n");
   return 0;
 }
 
