@@ -160,7 +160,7 @@ void multiplyPoly(Poly *A, double c){
   }
 }
 
-//multiplies a double by the polynomial
+//divides a polynomial by a double
 void dividePoly(Poly *A, double c){
   for (int i = A->power;i>-1;i--){
     A->constant = (A->constant)/c;
