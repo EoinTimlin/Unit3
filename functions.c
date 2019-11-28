@@ -126,7 +126,7 @@ while(A->next && B->next) // While there term in A and in B
     else if(A->power < B->power) // Else if this term in B is higher degree than the term in A
     {
       C->power = B->power;
-      C->constant = B->constant; // Set this term in C to B
+      C->constant = -B->constant; // Set this term in C to B
       B = B->next;
     }
     else // Otherwise, if they are the same degree
