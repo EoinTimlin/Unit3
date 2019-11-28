@@ -170,15 +170,12 @@ void dividePoly(Poly *A, double c){
 
 // Function to normalise a polynomial
 void normalPoly(Poly *A){
-  
   double c;
   c = A->constant;
-  
-  for (int i = A->power;i>-1;i--){
+  while(A->power != NULL){
     A->constant = (A->constant)/c;
     A = A->next;
   }
-  
 }
 
 // Function to return highest order of polynomial
