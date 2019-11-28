@@ -46,3 +46,20 @@ while(A->next != NULL)
         printf(" + "); 
     } 
 }
+
+// Function to delete polynomial
+void deletePoly(Poly **A)
+{
+  Poly* current = *A; 
+  Poly* next; 
+  
+   while (current != NULL)  
+   { 
+       next = current->next; 
+       free(current); 
+       current = next; 
+   }
+   
+   *A = NULL; 
+}
+
