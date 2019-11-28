@@ -55,7 +55,7 @@ void deletePoly(Poly **A)
    
    *A = NULL; 
 }
-
+// Function to add polynomials
 void addPoly(Poly *A, Poly *B, Poly *C)
 {
   while(A->next && B->next)
@@ -103,7 +103,7 @@ void addPoly(Poly *A, Poly *B, Poly *C)
     C->next = NULL;
   }
 }
-
+// Function to subtract polynomials
 subtractPoly(Poly *A, Poly *B, Poly *C)
 {
 while(A->next && B->next)
