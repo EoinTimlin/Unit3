@@ -3,13 +3,6 @@
 
 #include "assignment_3.h"
 
-typedef struct Polynomials
-{
-  int power;
-  double constant;
-  struct Polynomials *next;
-} Poly;
-
 // Function add a new polynomial
 void createPoly(Poly **A,double con,int pow)
 {
