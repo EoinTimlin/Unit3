@@ -1,20 +1,43 @@
-#include "assignment_3.h"
-
 int main()
 {
-  Poly *poly = NULL;
-  createPoly(&poly,5,2);
-  createPoly(&poly,4,1);
-  createPoly(&poly,2,0);
+  Poly *poly1 = NULL;
+  createPoly(&poly1,5,2);
+  createPoly(&poly1,4,1);
+  createPoly(&poly1,2,0);
 
-  printPoly(poly);
+  Poly *poly2 = NULL;
+  createPoly(&poly2,6,3);
+  createPoly(&poly2,3,2);
+  createPoly(&poly2,8,0);
+
+  Poly *poly3 = NULL;
+  poly3 = (Poly*)malloc(sizeof(poly3));
+
+  Poly *poly4 = NULL;
+  poly4 = (Poly*)malloc(sizeof(poly4));
+
+  printPoly(poly1);
   printf("\n");
 
-  deletePoly(&poly);
-  if(poly == NULL)
+  printPoly(poly2);
+  printf("\n");
+
+  addPoly(poly1, poly2, poly3);
+
+  printPoly(poly3);
+  printf("\n");
+
+  subtractPoly(poly1, poly2, poly4);
+
+  printPoly(poly4);
+  printf("\n");
+
+  deletePoly(&poly3);
+  if(poly3 == NULL)
     {
       printf("Fully Deleted\n");
     }
-  
+
   return 0;
 }
+
