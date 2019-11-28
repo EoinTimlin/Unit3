@@ -1,6 +1,5 @@
 // Functions to work with Polynomials
 
-
 #include "assignment_3.h"
 
 // Function add a new polynomial
