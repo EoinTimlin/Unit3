@@ -43,8 +43,10 @@ void printPoly(Poly *A)
 	  printf("%.1lfx^%d", A->constant, A->power); 
           A = A->next;
 	}
-    if(A->next != NULL) 
-        printf(" + "); // Print a + between the parts
+    if(A->next != NULL && A->constant >= 0) 
+        printf(" + "); // Print a + between the parts (Positive)
+    else
+      printf(" "); // Print space for negative numbers
     } 
 }
 
