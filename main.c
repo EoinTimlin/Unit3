@@ -1,10 +1,15 @@
+// main function
+
 #include "assignment_3.h"
 
 int main()
 {
-  //Creating Polynomials 
+  //Creating Polynomials
+  printf("\n");
+  printf("Testing creating polynomials....\n");
+ 
   Poly *poly1 = NULL;
-  createPoly(&poly1,5,2);
+  createPoly(&poly1,5,3);
   createPoly(&poly1,4,1);
   createPoly(&poly1,2,0);
 
@@ -12,37 +17,41 @@ int main()
   createPoly(&poly2,6,3);
   createPoly(&poly2,3,2);
   createPoly(&poly2,8,0);
-  
-  //Poly for addition
-  Poly *poly3 = NULL;
-  poly3 = (Poly*)malloc(sizeof(poly3));
 
-  //Poly for Subtraction
-  Poly *poly4 = NULL;
-  poly4 = (Poly*)malloc(sizeof(poly4));
-
-  printf("Expected: 5x^2 + 4x^1 + 2x^0\n");
+  printf("Poly 1:\n");
+  printf("Expected: 5.0x^3 + 4.0x^1 + 2.0\n");
   printf("Actual: ");
   printPoly(poly1);
   printf("\n");
 
-  printf("Expected: 6x^3 + 3x^2 + 8x^0\n");
+  printf("Poly 2:\n");
+  printf("Expected: 6.0x^3 + 3.0x^2 + 8.0\n");
   printf("Actual: ");
   printPoly(poly2);
-  printf("\n");
+  printf("\n\n");
 
+  printf("Testing adding polynomials (P1 + P2)....\n");
+  printf("Poly 3:\n");
   // Add Polynomials
+  // Poly for addition
+  Poly *poly3 = NULL;
+  poly3 = (Poly*)malloc(sizeof(poly3));
   addPoly(poly1, poly2, poly3);
 
-  printf("Expected: 6x^3 + 8x^2 + 4x^1 + 10x^0\n");
+  printf("Expected: 11.0x^3 + 3.0x^2 + 4.0x^1 + 10.0\n");
   printf("Actual: ");
   printPoly(poly3);
   printf("\n\n");
 
-  // Subtract Polynomials  
+  printf("Testing subtracting polynomials (P1 - P2)....\n");
+  printf("Poly 4:\n");
+  // Subtract Polynomials
+   //Poly for Subtraction
+  Poly *poly4 = NULL;
+  poly4 = (Poly*)malloc(sizeof(poly4));
   subtractPoly(poly1, poly2, poly4);
 
-  printf("Expected: 6x^3 + 2x^2 + 4x^1 + -6x^0\n");
+  printf("Expected: -1.0x^3 - 3.0x^2 + 4.0x^1 - 6.0\n");
   printf("Actual: ");
   printPoly(poly4);
   printf("\n\n");
@@ -56,16 +65,18 @@ int main()
     }
   else
     {
-      printf("Failed\n");
+      printf("Failed\n\n");
     }
   
   // Testing order function
   int highorder;
   highorder = retHigh(&poly2);
   printf("Order of Polynomial 2: \n");
-  printf("Expected: 3 Actual: %d \n\n",highorder);
+  printf("Expected: 3 \nActual: %d \n\n",highorder);
 
   //Testing multiply function
+  printf("Testing multiply function..\n");
+  printf("Polynomial: ");
   Poly *poly6 = NULL;
   createPoly(&poly6,1,6);
   createPoly(&poly6,5,5);
@@ -73,26 +84,30 @@ int main()
   createPoly(&poly6,4,1);
   createPoly(&poly6,2,0);
 
+  printPoly(poly6);
+  printf("\n");
   multiplyPoly(poly6,2);
-  printf("Expected: 2x^6 + 10x^5 + 7x^3 + 8x^1 + 4\n");
-  printf("Actual: ");
+
+  printf("Multiplied by 2: ");
   printPoly(poly6);
   printf("\n\n");
   
   //Testing Divide function
+  printf("Testing divide function..\n");
+  printf("Polynomial: ");
   Poly *poly7 = NULL;
   createPoly(&poly7,1,6);
   createPoly(&poly7,5,5);
-  createPoly(&poly7,3.2,3);
+  createPoly(&poly7,3.5,3);
   createPoly(&poly7,4,1);
   createPoly(&poly7,2,0);
 
+  printPoly(poly7);
+  printf("\n");
   dividePoly(poly7,2);
-  printf("Dividing 1x^6 + 5x^5 + 3.2x^3 + 4x^1 + 2 by 2\n");
-  printf("Expected: 0.5x^6 + 2.5x^5 + 1.6x^3 + 2x^1 + 1\n");
-  printf("Actual:");
+
+  printf("Divided by 2: ");
   printPoly(poly7);
   printf("\n\n");
   return 0;
 }
-
