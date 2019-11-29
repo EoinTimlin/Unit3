@@ -42,7 +42,7 @@ int main()
   // Subtract Polynomials  
   subtractPoly(poly1, poly2, poly4);
 
-  printf("Expected: 6x^3 + 2x^2 + 4x^1 + -6x^0");
+  printf("Expected: 6x^3 + 2x^2 + 4x^1 + -6x^0\n");
   printf("Actual: ");
   printPoly(poly4);
   printf("\n\n");
