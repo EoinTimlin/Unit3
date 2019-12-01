@@ -5,8 +5,8 @@ b = functions.c
 c = assignment_3.h
 
 assignment3: $(a) $(b) $(c)
-	gcc -Wall -ggdb -w -o  assignment $(a) $(b)
-	./assignment
+	gcc -Wall -ggdb -w -o  poly $(a) $(b)
+	./poly
 
 clean:
-	rm *# *~ assignment
+	rm *# *~ poly
