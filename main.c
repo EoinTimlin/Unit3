@@ -74,6 +74,21 @@ int main()
   printf("Order of Polynomial 2: \n");
   printf("Expected: 3 \nActual: %d \n\n",highorder);
 
+  //Testing Normalise Function
+  Poly *poly5 = NULL;
+  createPoly(&poly5,2,3);
+  createPoly(&poly5,-4,2);
+  createPoly(&poly5,6,1);
+  createPoly(&poly5,8,0);
+
+  printf("Normalising Polynomial: ");
+  printPoly(poly5);
+  normalPoly(poly5);
+  printf("\nExpected: 1x^3 - 2x^2 + 3x^1 + 4\n");
+  printf("Actual:");
+  printPoly(poly5);
+  printf("\n\n");
+  
   //Testing multiply function
   printf("Testing multiply function..\n");
   printf("Polynomial: ");

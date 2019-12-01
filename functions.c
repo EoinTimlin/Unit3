@@ -187,6 +187,7 @@ void normalPoly(Poly *A){
     A->constant = (A->constant)/c; // Divide by highest term's constant
     A = A->next;
   }
+  A->constant = (A->constant)/c; // Divides the zero power
 }
 
 // Function to return highest order of polynomial
