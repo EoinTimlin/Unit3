@@ -1,4 +1,9 @@
 // main function
+//Rory Brennan
+//Eoin Timlin
+//Tom Meehan
+//Joey Corbett
+//Sean Dolan
 
 #include "assignment_3.h"
 

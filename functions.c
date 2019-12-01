@@ -1,4 +1,9 @@
 // Functions to work with Polynomials
+//Rory Brennan
+//Eoin Timlin
+//Tom Meehan
+//Joey Corbett
+//Sean Dolan
 
 #include "assignment_3.h"
 
