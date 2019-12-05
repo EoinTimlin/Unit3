@@ -5,7 +5,7 @@
 //Joey Corbett
 //Sean Dolan
 
-#include "assignment_3.h"
+#include "assignment_3.h" 
 
 // Function add a new polynomial
 void createPoly(Poly **A,double con,int pow)
@@ -18,13 +18,13 @@ void createPoly(Poly **A,double con,int pow)
       x->constant = con; // Set the constant
       x->power = pow; // Set the power
       *A = x;
-      x->next = (Poly*)malloc(sizeof(Poly));
-      x = x->next;
-      x->next= NULL;
+      x->next = (Poly*)malloc(sizeof(Poly)); // Create memory for the next poly term
+      x = x->next; // Set x to next term
+      x->next= NULL; // Set the next term to NULL
     }
   else // If there is not free memory 
     {
-      x->constant = con;
+      x->constant = con; 
       x->power = pow;
       x->next = (Poly*)malloc(sizeof(Poly));
       x = x->next;
@@ -40,15 +40,15 @@ void printPoly(Poly *A)
     {
       if(A->power == 0)
 	{
-	  printf("%.1lf",A->constant); //Print a part of the expression in the form (constant)x^(power)
-	  A = A->next;
+	  printf("%.1lf",A->constant); // If there is no exponent, print [constant]x
+	  A = A->next; // Go to next term
 	}
       else
 	{
-	  printf("%.1lfx^%d", A->constant, A->power); 
-          A = A->next;
+	  printf("%.1lfx^%d", A->constant, A->power);  // Print [constant]x^[power]
+          A = A->next; // Go to next term
 	}
-    if(A->next != NULL && A->constant >= 0) 
+    if(A->next != NULL && A->constant >= 0) // If the next term exists and it's constant is not zero
         printf(" + "); // Print a + between the parts (Positive)
     else
       printf(" "); // Print space for negative numbers
@@ -61,11 +61,11 @@ void deletePoly(Poly **A)
   Poly* current = *A; 
   Poly* next; 
   
-   while (current != NULL) // While there is used memory in this location
+   while (current != NULL) // While the current term in the poly exists
    { 
-       next = current->next; 
-       free(current); // Clear memory location
-       current = next; 
+       next = current->next; // Store the current term's next reference
+       free(current); // Delete term
+       current = next; // Set the current term to the next term
    }
    
    *A = NULL; 
@@ -73,27 +73,27 @@ void deletePoly(Poly **A)
 // Function to add polynomials
 void addPoly(Poly *A, Poly *B, Poly *C)
 {
-  while(A->next && B->next) // While there term in A and in B
+  while(A->next && B->next) // While there is a next reference in A and in B
   {
     if(A->power > B->power) // If this term in A is higher degree than in B
     {
-      C->power = A->power; // Set this term on C to the term in A
-      C->constant = A->constant; 
-      A = A->next;
+      C->power = A->power; // Set C power to A power
+      C->constant = A->constant; // Set C constant to A constant
+      A = A->next; // Go to next term in poly A
     }
 
     else if(A->power < B->power) // Else if this term in B is higher degree than the term in A
     {
-      C->power = B->power; // Set this term in C to the term in B
-      C->constant = B->constant;
-      B = B->next;
+      C->power = B->power; // Set C power to B power
+      C->constant = B->constant; // Set C constant to B constant
+      B = B->next; // Go to next term in poly B
     }
     else // Otherwise, if they are the same degree
     {
-      C->power = A->power;
-      C->constant = A->constant + B->constant; // Add the term's constants together
-      A = A->next;
-      B = B->next;
+      C->power = A->power; // Set C power to A power
+      C->constant = A->constant + B->constant; // Add A and B constants together
+      A = A->next; // Go to next term in poly A
+      B = B->next; // Go to next term in poly B
     }
      C->next = (Poly*)malloc(sizeof(C));
      C = C->next;
@@ -103,19 +103,19 @@ void addPoly(Poly *A, Poly *B, Poly *C)
   {
     if(A->next) // If there is a term in A
     {
-      C->power = A->power; // Set the next term in C to A
-      C->constant = A->constant;
-      A = A->next;
+      C->power = A->power; // Set C power to A power
+      C->constant = A->constant; // Set C constant to A constant
+      A = A->next; // Go to next term in poly A
     }
     if(B->next) // If there is a term in B
     {
-      C->power = B->power; // Set the next term in C to B
-      C->constant = B->constant;
-      B = B->next;
+      C->power = B->power; // Set C power to B power
+      C->constant = B->constant; // Set C constant to B constant
+      B = B->next; // Go to next term in poly B
     }
     C->next = (Poly*)malloc(sizeof(C));
     C = C->next;
-    C->next = NULL;
+    C->next = NULL; // Create an empty next term in poly 
   }
 }
 // Function to subtract polynomials
@@ -169,17 +169,17 @@ while(A->next && B->next) // While there term in A and in B
 
 //multiplies a double by the polynomial
 void multiplyPoly(Poly *A, double c){
-  while(A->next != NULL){
-   A->constant = (A->constant)*c;
-    A = A->next;
+  while(A->next != NULL){ // While the next term in the polynomial exists
+   A->constant = (A->constant)*c; // multiply term's constant by c
+    A = A->next; // Go to next term
   }
 }
 
 //divides a double by the polynomial
 void dividePoly(Poly *A, double c){
-  while(A->next != NULL){
-    A->constant = (A->constant)/c; // Divide by constant c
-    A = A->next;
+  while(A->next != NULL){ // While the next term in the polynomial exists
+    A->constant = (A->constant)/c; // Divide term's constant by c
+    A = A->next; // Go to next term
   }
 }
 
@@ -198,28 +198,28 @@ void normalPoly(Poly *A){
 // Function to return highest order of polynomial
 int retHigh(Poly **A)
 {
-  Poly* current = *A;
+  Poly* current = *A; // First term
   int max = -32000;
   
-  while(current->next != NULL)
+  while(current->next != NULL) // While the next term in the polynomial exists
     {
-      if(current->power > max)
+      if(current->power > max) // If the power on the current term is greater than the max power
 	{
 	  if(current->constant != 0) // Checks if coefficient is not zero
 	    {
-	      max =  current->power;
-	      current = current->next;
+	      max =  current->power; // Set the max power to the current term
+	      current = current->next; // Set the next term
 	    }
 	  else
 	    {
-	      current = current->next;
+	      current = current->next; // Set the next term
 	    }
 	}
       else
 	{
-	  current = current->next;
+	  current = current->next; // Set the next term
 	}
     }
   
-  return max;
+  return max; // Return the maximum power in the polynomial
 }
